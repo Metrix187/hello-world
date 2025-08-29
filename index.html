@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Substance Wiki</title>
+    <meta name="description" content="A comprehensive wiki about substances, their properties, effects, and safety information">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-atom"></i>
+                <span>Substance Wiki</span>
+            </div>
+            <div class="nav-search">
+                <input type="text" id="searchInput" placeholder="Search substances..." autocomplete="off">
+                <i class="fas fa-search search-icon"></i>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#substances" class="nav-link" data-section="substances">
+                    <i class="fas fa-flask"></i> Substances
+                </a>
+                <a href="#safety" class="nav-link" data-section="safety">
+                    <i class="fas fa-shield-alt"></i> Safety
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <i class="fas fa-info-circle"></i> About
+                </a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="content-section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Substance Wiki</h1>
+                    <p class="hero-subtitle">Your comprehensive resource for substance information, safety, and harm reduction</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" onclick="showSection('substances')">
+                            <i class="fas fa-search"></i> Browse Substances
+                        </button>
+                        <button class="btn btn-secondary" onclick="showSection('safety')">
+                            <i class="fas fa-shield-alt"></i> Safety Guide
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="molecule-animation">
+                        <div class="atom"></div>
+                        <div class="atom"></div>
+                        <div class="atom"></div>
+                        <div class="bond"></div>
+                        <div class="bond"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Comprehensive Database</h3>
+                    <p>Detailed information on a wide variety of substances including effects, dosage, and pharmacology.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h3>Harm Reduction</h3>
+                    <p>Evidence-based safety information and harm reduction strategies for responsible use.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Scientific Accuracy</h3>
+                    <p>Information backed by peer-reviewed research and scientific literature.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Driven</h3>
+                    <p>Built and maintained by a community of researchers, medical professionals, and advocates.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Substances Section -->
+        <section id="substances" class="content-section">
+            <div class="section-header">
+                <h2>Substance Database</h2>
+                <p>Browse our comprehensive database of substances with detailed information on effects, dosage, safety, and more.</p>
+            </div>
+            
+            <div class="substance-categories">
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">All Categories</button>
+                    <button class="filter-btn" data-category="psychedelics">Psychedelics</button>
+                    <button class="filter-btn" data-category="stimulants">Stimulants</button>
+                    <button class="filter-btn" data-category="depressants">Depressants</button>
+                    <button class="filter-btn" data-category="dissociatives">Dissociatives</button>
+                    <button class="filter-btn" data-category="cannabinoids">Cannabinoids</button>
+                </div>
+                
+                <div class="substances-grid" id="substancesGrid">
+                    <!-- Substances will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety Section -->
+        <section id="safety" class="content-section">
+            <div class="section-header">
+                <h2>Safety & Harm Reduction</h2>
+                <p>Essential safety information and harm reduction practices for responsible use.</p>
+            </div>
+            
+            <div class="safety-grid">
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>General Safety Guidelines</h3>
+                    <ul>
+                        <li>Start with the lowest possible dose</li>
+                        <li>Never mix substances without research</li>
+                        <li>Use with trusted people in safe environments</li>
+                        <li>Have a sober trip sitter when appropriate</li>
+                        <li>Research interactions with medications</li>
+                    </ul>
+                </div>
+                
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Emergency Resources</h3>
+                    <ul>
+                        <li><strong>Emergency:</strong> 911 (US) / 999 (UK) / 112 (EU)</li>
+                        <li><strong>Poison Control:</strong> 1-800-222-1222 (US)</li>
+                        <li><strong>Crisis Text Line:</strong> Text HOME to 741741</li>
+                        <li><strong>SAMHSA Helpline:</strong> 1-800-662-4357</li>
+                    </ul>
+                </div>
+                
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        <i class="fas fa-first-aid"></i>
+                    </div>
+                    <h3>Harm Reduction Supplies</h3>
+                    <ul>
+                        <li>Test kits for substance identification</li>
+                        <li>Clean injection supplies if applicable</li>
+                        <li>Benzodiazepines for trip emergencies</li>
+                        <li>Electrolyte drinks for stimulant use</li>
+                        <li>Accurate scale for dosing</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <div class="section-header">
+                <h2>About Substance Wiki</h2>
+                <p>Learn more about our mission, values, and the team behind this resource.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-section">
+                    <h3>Our Mission</h3>
+                    <p>Substance Wiki is dedicated to providing accurate, evidence-based information about psychoactive substances to promote harm reduction and informed decision-making. We believe that education and transparency are essential tools in reducing the risks associated with substance use.</p>
+                </div>
+                
+                <div class="about-section">
+                    <h3>Our Values</h3>
+                    <ul>
+                        <li><strong>Scientific Accuracy:</strong> All information is based on peer-reviewed research and expert consensus</li>
+                        <li><strong>Harm Reduction:</strong> We prioritize safety and risk mitigation over abstinence-only approaches</li>
+                        <li><strong>Non-Judgmental:</strong> We provide information without moral judgment or stigmatization</li>
+                        <li><strong>Transparency:</strong> Our sources and methodologies are always clearly cited</li>
+                        <li><strong>Community:</strong> We welcome contributions from researchers, medical professionals, and experienced users</li>
+                    </ul>
+                </div>
+                
+                <div class="about-section">
+                    <h3>Disclaimer</h3>
+                    <p class="disclaimer">This website is for educational purposes only and should not be considered medical advice. Always consult with healthcare professionals before making decisions about substance use. The information provided here is not intended to encourage illegal activity or substance abuse.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#substances">Substance Database</a></li>
+                    <li><a href="#safety">Safety Guidelines</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="https://github.com">GitHub Repository</a></li>
+                    <li><a href="mailto:contact@substancewiki.org">Contact Us</a></li>
+                    <li><a href="#contribute">Contribute</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Use</a></li>
+                    <li><a href="#disclaimer">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Substance Wiki. All rights reserved. Educational purposes only.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
