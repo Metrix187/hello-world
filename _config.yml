@@ -1,0 +1,73 @@
+# GitHub Pages Configuration for Substance Wiki
+
+# Site settings
+title: "Substance Wiki"
+description: "A comprehensive resource for substance information, safety, and harm reduction"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://yourusername.github.io" # Replace with your actual GitHub Pages URL
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Include files
+include:
+  - _pages
+
+# Collections
+collections:
+  substances:
+    output: true
+    permalink: /:collection/:name/
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "substances"
+    values:
+      layout: "substance"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# SEO settings
+author: "Substance Wiki Team"
+twitter:
+  username: substancewiki
+  card: summary_large_image
+
+social:
+  name: Substance Wiki
+  links:
+    - https://github.com/yourusername/substance-wiki
+
+# Google Analytics (optional)
+# google_analytics: UA-XXXXXXXX-X
+
+# Site verification (optional)
+# google_site_verification: "your-verification-code"
+
+# Theme settings
+theme_color: "#6366f1"
+background_color: "#ffffff"
